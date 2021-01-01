@@ -3,13 +3,29 @@
 #include <fstream>
 #include <ctime>
 
-void guessing(int &score, std::vector<int> &guess_list)
+void guessing(int &score, std::vector<int> &guess_list, int ANSWER)
 {
-  
+  int temp;
+
+  do{
+    std::cout << ANSWER << std::endl;
+    std::cout << "Guess a number:" << std::endl;
+    std::cin >> temp;
+
+    if(temp < ANSWER)
+    {
+      std::cout << "Too Low" << std::endl;
+    }
+    else if(temp > ANSWER)
+    {
+      std::cout << "Too High" << std::endl;
+    }
 
 
+  }while(temp != ANSWER);
 }
 
+/*
 void add_highscore()
 {
 
@@ -19,7 +35,7 @@ void display_highscores()
 {
 
 }
-
+*/
 
 int main()
 {
@@ -47,9 +63,9 @@ int main()
     //allows to change outcome mid-way
     if(play)
     {
-      guessing(score, guess_list);
-      add_highscore();
-      display_highscores();
+      guessing(score, guess_list, ANSWER);
+      //add_highscore(score);
+      //display_highscores();
     }
     //Playing?
     std::cout << "Want to Play? \n1. Play \n0. Quit" << std::endl;
