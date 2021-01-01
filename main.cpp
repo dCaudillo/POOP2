@@ -3,7 +3,21 @@
 #include <fstream>
 #include <ctime>
 
-bool guessing
+void guessing(int &score, std::vector<int> &guess_list)
+{
+
+}
+
+void add_highscore()
+{
+
+}
+
+void display_highscores()
+{
+
+}
+
 
 int main()
 {
@@ -16,8 +30,7 @@ int main()
   //Score and Guess vector created
   int score = 0;
   std::vector<int> guess_list;
-  std::string name;
-  
+
   //Random seed is generated for ANSWER
   srand(time(NULL));
   const int ANSWER = (rand() % 101);
@@ -32,9 +45,9 @@ int main()
     //allows to change outcome mid-way
     if(play)
     {
-      guessing();
+      guessing(score, guess_list);
       add_highscore();
-      display_final_scores();
+      display_highscores();
     }
     //Playing?
     std::cout << "Want to Play? \n1. Play \n0. Quit" << std::endl;
