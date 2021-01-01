@@ -41,5 +41,5 @@ int main()
     std::cin >> play;
   }while(play);
 
-  std::cout << "Goodbye. "
+  std::cout << "Goodbye. Come Again!" << std::endl;
 }
