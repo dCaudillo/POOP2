@@ -39,10 +39,12 @@ void add_highscore(int score, std::vector<int> guess_list)
   //Prints guesses
   std::cout << "You guesssed ";
   
-  
-  for(int i = 0; i <= (guess_list.size()-2); i++)
+  if(guess_list.size() > 1)
   {
-    std::cout << guess_list[i] <<", ";
+    for(int i = 0; i <= (guess_list.size()-2); i++)
+    {
+      std::cout << guess_list[i] <<", ";
+    }
   }
   std::cout << guess_list[guess_list.size()-1] << "." << std::endl;
 
@@ -66,8 +68,8 @@ void display_highscores()
   //Creating Outputs and vectors to hold info, as well as, temporay place-holders
   std::ifstream name_print ("names.txt");
   std::ifstream high_score_print ("high scores.txt");
-  std::vector<std::string> names;
-  std::vector<int> scores;
+  std::vector<std::string> names = {};
+  std::vector<int> scores = {};
   int temp_score;
   std::string temp_name;
 
@@ -76,6 +78,8 @@ void display_highscores()
   {
     names.push_back(temp_name);
     scores.push_back(temp_score);
+
+    std::cout << temp_name;
   }
 
   //Prints names and scores
